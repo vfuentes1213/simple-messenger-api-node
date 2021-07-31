@@ -1,0 +1,37 @@
+#!/bin/bash
+
+build() {
+    docker compose build
+}
+
+up() {
+    docker compose up -d
+}
+
+down() {
+    docker compose down
+}
+
+start() {
+    up && start
+}
+
+stop() {
+    docker compose stop
+}
+
+shell() {
+    docker compose exec app /bin/bash
+}
+
+test() {
+    docker compose exec app npm test
+}
+
+logs() {
+    docker compose logs
+}
+
+# TODO: lint task
+
+
