@@ -1,18 +1,17 @@
 openapi: 3.0.0
 info:
-  title: Simple Messenger API
-  version: 1.0.0
+  title: Sample API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
 servers:
-  - url: http://api.example.com
-    description: production server
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
   - url: http://staging-api.example.com
-    description: staging server
-  - url: http://dev-api.example.com
-    description: development server
+    description: Optional server description, e.g. Internal staging server for testing
 paths:
-  /v1/message:
+  /users:
     get:
-      summary: Returns a list of message for a user
+      summary: Returns a list of users.
       description: Optional extended description in CommonMark or HTML.
       responses:
         "200": # status code
