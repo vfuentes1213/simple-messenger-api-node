@@ -7,3 +7,5 @@ services:
       - .:/usr/src/app
     tty: true
     stdin_open: true
+    environment:
+      - NODE_ENV="development"
