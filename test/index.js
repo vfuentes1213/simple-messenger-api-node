@@ -1,4 +1,5 @@
 // index.js
+const expect = require('chai').expect;
 
 // This is just for organisation and reporting
 describe('Our application', function() {
@@ -13,6 +14,15 @@ describe('Our application', function() {
         // Otherwise, call done with an error.
         done(new Error("Not sure what's happened."));
         }
+    });
+
+    describe('domain specific', function() {
+        // This is the name of the test
+        it('should do some business logic', function() {
+            expect(5).to.equal(5);
+            expect(5).to.not.equal(3);
+        });
+    
     });
 
 });
