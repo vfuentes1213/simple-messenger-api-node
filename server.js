@@ -1,23 +1,9 @@
-const express = require('express')
-const app = express()
+const app = require("./app")
+
 // TODO use env var
 const port = 8000
-
-const swaggerUi = require('swagger-ui-express');
-const YAML = require('yamljs');
-const swaggerDocument = YAML.load('./openapi.yml');
-
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-app.get('/v1/message', (req, res) => {
-    res.send({data: [{payload: "msg content"}]})
-})
-
-app.post("/v1/message", (req, res) => {
-    res.send({ message: "ok", "id": ""});
-})
-
+const host = "localhost"
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`app listening at http://${host}:${port}`)
 })
